@@ -1,0 +1,15 @@
+🚀 Task-Manager Application now on live 🚀
+
+I’m excited to share a project I’ve been develop to Manage Human Tasks...
+
+✅ Used Languages : HTML | CSS | JS
+
+✅ Used Libraries : Fontawesome | Sweet Alerts
+
+✅ Key Features:
+
+📌 Task Beahaviour: All tasks are saved to Local Storage, ensuring they stay even when you refresh or close the browser.
+📌 Fully Responsive Design: The app is designed to work seamlessly across all devices, providing a great user experience on desktop and mobile.
+📌 Modern UI: The interface is clean, intuitive, and easy to navigate, with dynamic task management.
+
+✨ Stay tuned — more exciting projects are on the way as I continue leveling up in my software journey!

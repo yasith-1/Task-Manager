@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-Manager Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.12/sweetalert2.min.css">
+    <link rel="shortcut icon" href="./assets/favicon/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="gradient-background">
+        <div class="background-pattern"></div>
+    </div>
+
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Task-Manager</h2>
+                <span class="badge">Pro</span>
+            </div>
+            <div class="date-container">
+                <div class="date-display">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3 id="today-date"></h3>
+                </div>
+                <div class="time-display">
+                    <i class="fas fa-clock"></i>
+                    <h4 id="current-time"></h4>
+                </div>
+            </div>
+            <div class="sidebar-stats">
+                <div class="stat-item">
+                    <i class="fas fa-tasks"></i>
+                    <span>Total Tasks: <strong id="total-tasks">0</strong></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Completed: <strong id="completed-tasks">0</strong></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span>Pending: <strong id="pending-tasks">0</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="todo-container">
+                <div class="header-container">
+                    <h1>My Tasks</h1>
+                    <div class="view-controls">
+                        <button id="view-all" class="view-btn active">All</button>
+                        <button id="view-active" class="view-btn">Active</button>
+                        <button id="view-completed" class="view-btn">Completed</button>
+                    </div>
+                </div>
+
+                <form class="todo-form" onsubmit="addTask(event)">
+                    <div class="input-group">
+                        <i class="fas fa-plus"></i>
+                        <input type="text" id="todo-input" placeholder="Add a new task..." required>
+                    </div>
+                    <div class="priority-selector">
+                        <select id="priority-select">
+                            <option value="normal">Normal Priority</option>
+                            <option value="high">High Priority</option>
+                            <option value="low">Low Priority</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="add-btn">Add Task</button>
+                </form>
+
+                <div class="tasks-wrapper">
+                    <ul class="todo-list" id="todo-list"></ul>
+                </div>
+
+                <div class="clear-actions">
+                    <button id="clear-completed" onclick="clearCompleted()">
+                        <i class="fas fa-trash-alt"></i> Clear Completed
+                    </button>
+                    <button id="clear-all" onclick="clearAll()">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.12/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
