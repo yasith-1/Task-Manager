@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1><i class="fas fa-chart-line"></i> Task Manager Dashboard</h1>
+            <p>Track your productivity and manage your tasks efficiently</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-tasks stat-icon"></i>
+                <div class="stat-number" id="total-tasks-stat">0</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-check-circle stat-icon"></i>
+                <div class="stat-number" id="completed-tasks-stat">0</div>
+                <div class="stat-label">Completed Tasks</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock stat-icon"></i>
+                <div class="stat-number" id="pending-tasks-stat">0</div>
+                <div class="stat-label">Pending Tasks</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-percentage stat-icon"></i>
+                <div class="stat-number" id="completion-rate">0%</div>
+                <div class="stat-label">Completion Rate</div>
+            </div>
+        </div>
+
+        <div class="main-dashboard">
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list-ul"></i> All Tasks</h2>
+                </div>
+                <div class="filter-controls">
+                    <button class="filter-btn active" onclick="filterTasks('all')">All</button>
+                    <button class="filter-btn" onclick="filterTasks('high')">High Priority</button>
+                    <button class="filter-btn" onclick="filterTasks('normal')">Normal</button>
+                    <button class="filter-btn" onclick="filterTasks('low')">Low Priority</button>
+                </div>
+                <div class="task-list" id="all-tasks-list">
+                    <div class="empty-state">
+                        <i class="fas fa-clipboard-list"></i>
+                        <p>No tasks found. Start by adding some tasks!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-check-double"></i> Completed Tasks</h2>
+                </div>
+                <div class="task-list" id="completed-tasks-list">
+                    <div class="empty-state">
+                        <i class="fas fa-trophy"></i>
+                        <p>No completed tasks yet. Keep working!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-pie"></i> Progress Analytics</h2>
+            </div>
+            <div class="progress-charts">
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="200" height="200">
+                        <circle class="progress-bg" cx="100" cy="100" r="90"></circle>
+                        <circle class="progress-bar" cx="100" cy="100" r="90" id="progress-circle"></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <div class="progress-percentage" id="progress-percentage">0%</div>
+                        <div class="progress-label">Completed</div>
+                    </div>
+                </div>
+
+                <div class="productivity-insights">
+                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">
+                        <i class="fas fa-lightbulb"></i> Productivity Insights
+                    </h3>
+                    <div class="insight-item">
+                        <i class="fas fa-fire insight-icon"></i>
+                        <div>
+                            <strong>Most Productive Day:</strong><br>
+                            <span id="productive-day">Not enough data</span>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <i class="fas fa-exclamation-triangle insight-icon"></i>
+                        <div>
+                            <strong>High Priority Tasks:</strong><br>
+                            <span id="high-priority-count">0 pending</span>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <i class="fas fa-calendar-check insight-icon"></i>
+                        <div>
+                            <strong>Tasks This Week:</strong><br>
+                            <span id="weekly-tasks">0 tasks</span>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <i class="fas fa-medal insight-icon"></i>
+                        <div>
+                            <strong>Achievement:</strong><br>
+                            <span id="achievement">Getting started!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/dashboard.js"></script>
+</body>
+
+</html>
