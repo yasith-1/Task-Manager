@@ -20,9 +20,54 @@ body {
 }
 
 .dashboard-header {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 40px;
   color: white;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-content {
+  text-align: left;
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.redirect-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.redirect-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(238, 90, 36, 0.4);
+  background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+}
+
+.redirect-btn:active {
+  transform: translateY(-1px);
+}
+
+.redirect-btn i {
+  font-size: 1.2rem;
 }
 
 .dashboard-header h1 {
@@ -352,8 +397,22 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .dashboard-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-content {
+    text-align: center;
+  }
+
   .dashboard-header h1 {
     font-size: 2rem;
+  }
+
+  .redirect-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
   }
 }
 
